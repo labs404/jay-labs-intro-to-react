@@ -3,9 +3,6 @@ import Card from "./card";
 import SpecialButton from "./button";
 import Welcome from "./welcome";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
 function formatName(user) {
 	return user.firstName + " " + user.lastName;
 }
@@ -18,12 +15,16 @@ let user1 = {
 
 };
 
-const element = (<>Hello, {formatName(user1)}. You are from {user1.homePlanet} <br />and you belong to the order of {user1.species}s</>);
+const element = (
+	<>
+		Hello, {formatName(user1)}. You are from {user1.homePlanet} <br />
+		and you belong to the order of {user1.species}s
+	</>
+);
+
 let myFirstName = "Rick";
 
-//create your first component
 const Home = () => {
-	// return (element);
 	return(
 			<div className="container text-center">
 				<div className="row">
@@ -54,6 +55,7 @@ const Home = () => {
 				</div>
 				<div className="row m-5">
 					<div className="col-12">
+						{Welcome(user1)}
 						<Welcome  firstName={myFirstName} lastName={user1.lastName} />
 					</div>
 				</div>
